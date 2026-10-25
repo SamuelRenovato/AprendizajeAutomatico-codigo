@@ -1,0 +1,7 @@
+,MAE,RMSE,MAPE_%,R2
+Referencia 1: media del entrenamiento,31092.712,31776.229,39.656,-22.497
+Referencia 2: ingenua (valor de ayer),5461.857,7841.769,6.854,-0.431
+Referencia 3: ingenua estacional (hace 7 días),5867.071,10068.857,7.293,-1.359
+Regresión lineal (escala original),3627.781,6059.468,4.496,0.146
+Regresión lineal (log del objetivo),3202.956,5861.693,3.943,0.2
+"Regresión lineal (log), entrenada desde may-2024",3176.513,5833.764,3.917,0.208

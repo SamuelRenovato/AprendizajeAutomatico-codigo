@@ -1,0 +1,87 @@
+Verificacion contra export 2: 378 dias comparados, 0 diferencias
+Coincide con el CSV entregado: True
+Serie diaria: 880 dias, 2024-05-25 a 2026-10-21
+Entrenamiento hasta 2026-07-29 | Validacion 2026-07-30 a 2026-09-23 | Prueba (RESERVADA) 2026-09-24 a 2026-10-21
+Filas modelables -> entrenamiento: 728 (con regimen previo: 789), validacion: 56, prueba reservada: 28
+
+Perfil semanal (mediana de la razon):
+ Lun    0.979
+Mar    0.956
+Mié    0.940
+Jue    0.936
+Vie    0.986
+Sáb    1.066
+Dom    1.115
+ACF rezagos 1, 7, 14: 0.034 0.466 0.384 | limite 95%: 0.07
+
+Saltos de nivel (>35 %):
+             anterior      pico  cambio_%
+date                                    
+2024-08-03    2283.0    3484.0      52.6
+2024-08-11   12008.0   16947.0      41.1
+2024-08-24   24416.0   64054.0     162.3
+2024-08-25   64054.0   89203.0      39.3
+2025-01-17   15713.0   23536.0      49.8
+2025-05-08   12387.0   22687.0      83.2
+2025-08-18   14546.0   28833.0      98.2
+2025-08-22   32735.0   47111.0      43.9
+2026-01-22   25956.0   62545.0     141.0
+2026-01-26   70939.0   98887.0      39.4
+2026-01-29   62782.0  100558.0      60.2
+2026-07-30   59879.0   93961.0      56.9
+Mayor caida diaria en el periodo exploratorio: -25.0 %
+
+Resumen del objetivo (entrenamiento + validacion):
+ count       784.0
+mean      48743.0
+std       34289.0
+min        2261.0
+25%       17341.0
+50%       38284.0
+75%       73584.0
+max      171490.0
+
+Resultados en VALIDACION ( 2026-07-30 a 2026-09-23 ):
+                                                         MAE       RMSE  MAPE_%      R2
+Referencia 1: media del entrenamiento             31092.712  31776.229  39.656 -22.497
+Referencia 2: ingenua (valor de ayer)              5461.857   7841.769   6.854  -0.431
+Referencia 3: ingenua estacional (hace 7 días)     5867.071  10068.857   7.293  -1.359
+Regresión lineal (escala original)                 3627.781   6059.468   4.496   0.146
+Regresión lineal (log del objetivo)                3202.956   5861.693   3.943   0.200
+Regresión lineal (log), entrenada desde may-2024   3176.513   5833.764   3.917   0.208
+
+Metricas en entrenamiento:
+                                           MAE      RMSE  MAPE_%     R2
+Regresión lineal (escala original)   3198.303  5632.609   8.850  0.973
+Regresión lineal (log del objetivo)  2357.558  5140.662   4.777  0.978
+
+Coeficientes (modelo log):
+ lag_1       0.940
+lag_7      -0.104
+media_7d    0.149
+dow_1       0.059
+dow_2       0.067
+dow_3       0.098
+dow_4       0.140
+dow_5       0.181
+dow_6       0.159
+
+Primeros 3 dias de validacion:
+                   y    naive   lr_log  ape_naive  ape_lr
+date                                                    
+2026-07-30  93961.0  59879.0  59874.0       36.3    36.3
+2026-07-31  82658.0  93961.0  96264.2       13.7    16.5
+2026-08-01  86541.0  82658.0  89138.9        4.5     3.0
+
+MAE sin el primer dia (ingenua, LR log): 4941 2641
+
+Muestra de la tabla de modelado:
+             dia_semana      y  lag_1  lag_7  media_7d
+date                                                 
+2026-07-30           3  93961  59879  56939     61055
+2026-07-31           4  82658  93961  58570     66344
+2026-08-01           5  86541  82658  61720     69785
+2026-08-02           6  93081  86541  68431     73331
+2026-08-03           0  79937  93081  60340     76852
+
+Listo. Resultados en: /mnt/user-data/outputs/codigo_avance/resultados
